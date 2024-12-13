@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Sofadi+One&family=Space+Grotesk:wght@300..700&display=swap");
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  font-family: "Public Sans", sans-serif;
+  font-style: normal;
+}
+
+:root {
+  ---Dark-Blue: hsl(233, 26%, 24%);
+  --Lime-Green: hsl(136, 65%, 51%);
+  --Bright-Cyan: hsl(192, 70%, 51%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-Grayish-Blue: hsl(220, 16%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+header {
+  background-color: var(--White);
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 50px;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--Grayish-Blue);
+}
+
+.nav-links li:hover {
+  border-bottom: 2px solid var(--Lime-Green);
+}
+
+.logo {
+  padding-left: 4rem;
+}
+
+.nav-btn {
+  margin-left: auto;
+  padding-right: 5rem;
+}
+
+.btn {
+  padding: 0.5rem 2.5rem;
+  background-color: var(--Lime-Green);
+  border-radius: 2rem;
+  border-style: none;
+  color: var(--White);
+  font-weight: 500;
+}
+
+#close-icon {
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav__menu__btn {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-areas:
+    "section-1 section-1 section-1"
+    "section-2 section-2 section-2"
+    "section-3 section-3 section-3";
+  overflow-x: hidden;
+  position: relative;
+}
+
+.section-1 {
+  grid-area: section-1;
+  display: grid;
+  grid-template-columns: 30vw 100vw;
+  grid-template-areas: "next-generation phone-svg";
+  width: 100vw;
+  padding-left: 6rem;
+  align-items: center;
+}
+
+.next-generation {
+  grid-area: next-generation;
+}
+
+.phone-svg {
+  grid-area: phone-svg;
+  height: 100vh;
+  width: 100vw;
+}
+
+picture {
+  margin-inline-start: 2rem;
+  margin-block-start: -10rem;
+}
+
+.phone-svg > img {
+  top: -1rem;
+  right: -8.3rem;
+  position: absolute;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 12rem 0 1rem;
+  color: var(---Dark-Blue);
+}
+
+h1 + p {
+  color: var(--Grayish-Blue);
+  margin-bottom: 2rem;
+}
+
+.section-2 {
+  grid-area: section-2;
+  background-color: var(--Light-Grayish-Blue);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100vw;
+  gap: 2rem;
+  margin-top: 9rem;
+  padding: 6rem 0 6rem 6rem;
+  grid-template-areas:
+    "why-choose why-choose why-choose why-choose why-choose"
+    "solution-types solution-types solution-types solution-types solution-types";
+}
+
+.why-choose {
+  grid-area: why-choose;
+  width: 31.25rem;
+}
+
+.solution-types {
+  width: 16.5625rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(---Dark-Blue);
+}
+
+h2 + p {
+  margin-bottom: 3rem;
+  color: var(--Grayish-Blue);
+}
+
+.label {
+  margin: 2rem 0;
+  display: block;
+  font-size: 1.5rem;
+  color: var(---Dark-Blue);
+}
+
+.label + p {
+  color: var(--Grayish-Blue);
+}
+
+.section-3 {
+  grid-area: section-3;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100vw;
+  gap: 2rem;
+  padding: 6rem 0 6rem 6rem;
+  grid-template-areas:
+    "articles-heading articles-heading articles-heading articles-heading articles-heading"
+    "article-type article-type article-type article-type article-type";
+}
+
+.articles-heading {
+  grid-area: articles-heading;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(---Dark-Blue);
+}
+
+.article-type {
+  width: 16.5625rem;
+}
+
+.article-type img {
+  height: 12.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.caption {
+  display: block;
+  margin: 2rem 0 1rem;
+  font-size: 0.85rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.title + p {
+  color: var(--Grayish-Blue);
+  font-size: 0.93rem;
+}
+
+.caption,
+.title,
+.title + p {
+  padding-left: 1rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 3fr;
+  padding: 4rem 0 4rem 6rem;
+  background-color: var(---Dark-Blue);
+  grid-template-areas: "logo-socials footer-links footer-links copyright";
+  color: var(--White);
+}
+
+.social-logos {
+  grid-area: logo-socials;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 4rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.125rem;
+  margin-left: 5rem;
+}
+
+.copyright {
+  grid-area: copyright;
+  margin-left: 17rem;
+}
+
+.copyright > .btn {
+  margin: 0 0 2rem 3.5rem;
+}
+
+.copyright p {
+  color: var(--Grayish-Blue);
+}
+
+@media (max-width: 48em) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 18.75rem;
+    margin: 1rem 0 0 2rem;
+    box-shadow: -3rem 3rem 3rem 3rem rgba(4, 1, 48, 0.322);
+  }
+
+  .nav__menu__btn {
+    display: block;
+    position: absolute;
+    right: 2rem;
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+
+  .logo img {
+    width: 300px;
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 14.375rem;
+    left: 0;
+    right: 0;
+    background-color: var(--White);
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "section-1" "section-2" "section-3";
+    align-items: center;
+  }
+
+  .section-1 {
+    grid-template-columns: 1fr;
+    grid-template-areas: "phone-svg" "next-generation";
+    padding: 0;
+    align-content: center;
+  }
+
+  .next-generation {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h1 + p {
+    font-size: 0.9rem;
+  }
+
+  picture {
+    margin-inline-start: 0rem;
+    margin-block-start: 2rem;
+  }
+
+  .phone-svg {
+    height: 30vh;
+    width: 100vw;
+  }
+
+  .phone-svg > img {
+    top: -3.3rem;
+    right: 0;
+    left: 0;
+  }
+
+  .section-2 {
+    grid-template-columns: 1fr;
+    padding: 0;
+    grid-template-areas: "why-choose" "solution-types ";
+    margin-top: 1rem;
+    padding: 4rem 2rem;
+  }
+
+  .why-choose,
+  .solution-types {
+    width: 19.375rem;
+    text-align: center;
+  }
+
+  .solution-types img {
+    margin: auto;
+  }
+
+  .section-3 {
+    grid-template-columns: 1fr;
+    padding: 4rem 2rem;
+    grid-template-areas: "articles-heading" "article-type";
+  }
+
+  .articles-heading,
+  .article-type {
+    width: 19.375rem;
+    text-align: left;
+  }
+
+  .article-type img  {
+    width: 18.75rem;
+  }
+
+  .caption,
+  .title,
+  .title + p {
+    padding-left: 0rem;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    grid-template-areas: "logo-socials" "footer-links" "footer-links" "copyright";
+  }
+
+  .footer-logo {
+    margin: auto;
+    color: var(--White);
+  }
+
+  .social-logos {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .copyright {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .copyright > .btn {
+    margin: 1rem 0;
+  }
+}
